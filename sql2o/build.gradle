@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'eu.appsatori:gradle-fatjar-plugin:0.2'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'fatjar'
+
+compileJava.options.encoding = 'UTF-8'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// > gradle fatJar
+fatJar {
+    baseName = 'sql2o'
+    version = '0.0.1'
+    manifest {
+        attributes('Main-Class': 'sample.kaze.Main')
+    }
+}
+
+repositories.mavenCentral()
+dependencies {
+    compile 'com.github.mamorum:kaze:0.0.1'
+    compile 'ch.qos.logback:logback-classic:1.1.7'
+    compile 'org.postgresql:postgresql:9.4.1209'
+    compile 'org.sql2o:sql2o:1.5.4'
+    compile 'org.flywaydb:flyway-core:4.0.3'
+}
