@@ -1,18 +1,16 @@
-package sample.sql2o.sql;
+package sample.rdb.sql;
 
 import java.util.List;
 
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
-import sample.sql2o.model.Tsubuyaki;
+import sample.rdb.Rdb;
+import sample.rdb.model.Tsubuyaki;
 
 public class TsubuyakiRepository {
   
-  Sql2o sql = new Sql2o(
-      "jdbc:postgresql://localhost:5432/sbt",
-      "spring", "spring"
-  );
+  Sql2o sql = Rdb.sql; 
   
   public List<Tsubuyaki> all() {
     try (Connection c = sql.open()) {

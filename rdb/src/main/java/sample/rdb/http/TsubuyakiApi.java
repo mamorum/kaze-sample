@@ -1,16 +1,15 @@
-package sample.sql2o.http;
+package sample.rdb.http;
 
 import kaze.Http;
 import kaze.http.Req;
 import kaze.http.Res;
-import sample.sql2o.model.Tsubuyaki;
-import sample.sql2o.sql.TsubuyakiRepository;
+import sample.rdb.model.Tsubuyaki;
+import sample.rdb.sql.TsubuyakiRepository;
 
 public class TsubuyakiApi {
   
-  TsubuyakiRepository repo = new TsubuyakiRepository();
-  
   static final String uri = "/tsubuyaki";
+  static TsubuyakiRepository repo = new TsubuyakiRepository();
   
   @Http({"POST", uri})
   public void create(Req req, Res res) {

@@ -10,9 +10,8 @@
     </encoder>
   </appender>
 
-  <root level="debug">
+  <root level="info">
     <appender-ref ref="STDOUT" />
   </root>
-  <logger name="org" level="INFO" />
   <logger name="kaze" level="DEBUG" />
 </configuration>

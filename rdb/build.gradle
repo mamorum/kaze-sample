@@ -18,10 +18,10 @@ targetCompatibility = 1.8
 
 // > gradle fatJar
 fatJar {
-    baseName = 'sql2o'
+    baseName = 'rdb'
     version = '0.0.1'
     manifest {
-        attributes('Main-Class': 'sample.kaze.Main')
+        attributes('Main-Class': 'sample.rdb.Main')
     }
 }
 
@@ -30,6 +30,7 @@ dependencies {
     compile 'com.github.mamorum:kaze:0.0.1'
     compile 'ch.qos.logback:logback-classic:1.1.7'
     compile 'org.postgresql:postgresql:9.4.1209'
+    compile 'com.zaxxer:HikariCP:2.4.7'
     compile 'org.sql2o:sql2o:1.5.4'
     compile 'org.flywaydb:flyway-core:4.0.3'
 }
