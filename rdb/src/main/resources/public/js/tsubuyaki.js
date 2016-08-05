@@ -86,7 +86,7 @@ $(function() {
 	// delete.
 	$('body').on('click', '.delete', function() {
 
-		if (!confirm("削除しますか？")) return;
+		if (!confirm("Are you sure you want to delete?")) return;
 
 		var $tsubuyaki = $(this).closest('.tsubuyaki');
 		var url = '/tsubuyaki/' + $tsubuyaki.data('id');

@@ -18,7 +18,7 @@ footer {
 	font-size:14px;
 	color:#ffffff;
 	text-align:center;
-	padding:15px 0px 50px 0px;
+	padding:15px 0px 30px 0px;
 }
 
 
@@ -51,31 +51,34 @@ footer {
 #tsubuyaki-form {
 	background-color:#A5D6A7;
 	border: solid 1px #5cb85c;
-	border-radius: 10px 10px 0px 0px;
-	padding: 15px 15px 15px;
+	border-radius: 10px;
+	padding: 20px 20px 15px 20px;
 }
 .tsubuyaki {
+	margin-top: 10px;
 	background-color:#ffffff;
-	border-left: solid 1px #5cb85c;
-	border-right: solid 1px #5cb85c;
-	border-bottom: solid 1px #5cb85c;
-	padding: 15px 15px 10px 15px;
+	border: solid 1px #5cb85c;
+	border-radius: 10px 10px 10px 10px;
+	padding: 15px 20px 10px 20px;
 }
 .tsubuyaki:hover,
 .tsubuyaki:hover .action .btn {
 	background-color: #f5fbf6;
-}
-.tsubuyaki:last-child {
-	border-radius: 0px 0px 10px 10px;
 }
 .tsubuyaki .txt p {
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	margin: 0 0 5px;
 }
+.tsubuyaki .action .date {
+	color: #7e7e7e;
+	font-size: 14px;
+	margin-right: 10px;
+}
 .tsubuyaki .action .btn {
 	color: #7e7e7e;
-	font-size: 15px;
+	font-size: 16px;
+	margin-left: 5px;
 	margin-right: 5px;
 	padding: 6px 5px 2px 6px;
 	border: none;
@@ -83,11 +86,6 @@ footer {
 .tsubuyaki .action .btn:hover {
 	background-color: #5cb85c;
 	color: #ffffff;
-}
-.tsubuyaki .date {
-	color: #7e7e7e;
-	font-size: 14px;
-	padding-left:3px;
 }
 #modal-label {
 	color: #5cb85c;

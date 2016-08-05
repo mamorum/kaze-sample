@@ -1,10 +1,10 @@
-package sample.rdb.http;
+package kaze.sample.rdb.http;
 
 import kaze.Http;
 import kaze.http.Req;
 import kaze.http.Res;
-import sample.rdb.model.Tsubuyaki;
-import sample.rdb.sql.TsubuyakiRepository;
+import kaze.sample.rdb.model.Tsubuyaki;
+import kaze.sample.rdb.sql.TsubuyakiRepository;
 
 public class TsubuyakiApi {
   
@@ -19,7 +19,7 @@ public class TsubuyakiApi {
   
   @Http({"GET", uri})
   public void read(Req req, Res res) {
-    res.json("tsubuyaki", repo.all());
+    res.json("tsubuyaki", repo.readAll());
   }
   
   @Http({"PUT", uri + "/:id"})

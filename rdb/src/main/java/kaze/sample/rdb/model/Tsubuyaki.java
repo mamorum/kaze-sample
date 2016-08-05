@@ -1,4 +1,4 @@
-package sample.rdb.model;
+package kaze.sample.rdb.model;
 
 import java.sql.Timestamp;
 

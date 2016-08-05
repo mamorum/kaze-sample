@@ -1,18 +1,18 @@
-package sample.rdb.sql;
+package kaze.sample.rdb.sql;
 
 import java.util.List;
 
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
-import sample.rdb.Rdb;
-import sample.rdb.model.Tsubuyaki;
+import kaze.sample.rdb.Rdb;
+import kaze.sample.rdb.model.Tsubuyaki;
 
 public class TsubuyakiRepository {
   
-  Sql2o sql = Rdb.sql; 
+  static Sql2o sql = Rdb.sql; 
   
-  public List<Tsubuyaki> all() {
+  public List<Tsubuyaki> readAll() {
     try (Connection c = sql.open()) {
       return c.createQuery(
           "select id, txt, updated_time updatedTime, created_time createdTime from tsubuyaki order by updated_time desc"

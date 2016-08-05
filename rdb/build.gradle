@@ -8,20 +8,24 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'fatjar'
+apply plugin: 'application'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'fatjar'
 
 compileJava.options.encoding = 'UTF-8'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+mainClassName = 'kaze.sample.rdb.Main'
+eclipse.project.name = 'kaze-sample-rdb'
+
 // > gradle fatJar
 fatJar {
-    baseName = 'rdb'
+    baseName = 'kaze-sample-rdb'
     version = '0.0.1'
     manifest {
-        attributes('Main-Class': 'sample.rdb.Main')
+        attributes('Main-Class': 'kaze.sample.rdb.Main')
     }
 }
 
