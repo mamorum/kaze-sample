@@ -2,10 +2,10 @@ $(function() {
 
 	// utilities.
 	function render(data) {
-		var tmpl = $('#tsubuyaki-tmpl').html();
+		var tmpl = $('#memo-tmpl').html();
 		Mustache.parse(tmpl);
 		var rendered = Mustache.render(tmpl, data);
-		$('#tsubuyaki-list').prepend(rendered);
+		$('#memo-list').prepend(rendered);
 	}
 	function format(msecString) {
 		var d = new Date(Number(msecString));
@@ -54,23 +54,23 @@ $(function() {
 			cache: false
 		}).then(function(data, status, jqxhr) {
 			render(data);
-			var $date = $('.tsubuyaki:first').find('.date');
+			var $date = $('.memo:first').find('.date');
 			$date.html(format($date.html()));
 			$('#txt').val('').focus();
 		});
 	});
 
 	// update.
-	var $tsubuyaki;
+	var $memo;
 	$('body').on('click', '.edit', function() {
-		$tsubuyaki = $(this).closest('.tsubuyaki');
-		$('#new-txt').val($tsubuyaki.find('.txt p').html());
+		$memo = $(this).closest('.memo');
+		$('#new-txt').val($memo.find('.txt p').html());
 		$('#modal').modal();
 	});
 	$('#modal-update').click(function() {
 
 		var txt = $('#new-txt').val();
-		var url = '/memo/' + $tsubuyaki.data('id');
+		var url = '/memo/' + $memo.data('id');
 
 		$.ajax({
 			url: url,
@@ -80,7 +80,7 @@ $(function() {
 			cache: false
 		}).then(function(data, status, jqxhr) {
 			$('#modal').modal('hide');
-			$tsubuyaki.find('.txt p').html(data.memo.txt);
+			$memo.find('.txt p').html(data.memo.txt);
 		});
 	});
 
@@ -89,15 +89,15 @@ $(function() {
 
 		if (!confirm("Are you sure you want to delete?")) return;
 
-		var $tsubuyaki = $(this).closest('.tsubuyaki');
-		var url = '/memo/' + $tsubuyaki.data('id');
+		var $memo = $(this).closest('.memo');
+		var url = '/memo/' + $memo.data('id');
 
 		$.ajax({
 			url: url,
 			method: 'delete',
 			cache: false
 		}).then(function(data, status, jqxhr) {
-			$tsubuyaki.remove();
+			$memo.remove();
 		});
 	});
 });

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Memo</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/tsubuyaki.css" rel="stylesheet">
+<link href="css/memo.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <div id="brand">
-        <img alt="brand" width="40" height="40" src="img/tsubuyaki.png">
+        <img alt="brand" width="40" height="40" src="img/memo.png">
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-        <div id="tsubuyaki-form">
+        <div id="memo-form">
           <form class="form-horizontal">
             <div class="form-group">
               <textarea class="form-control" id="txt" rows="4" placeholder="memo ..."></textarea>
@@ -43,8 +43,8 @@
                 </button>
               </div>
           </form>
-        </div><!--  tsubuyaki-form -->
-        <div id="tsubuyaki-list"></div>
+        </div><!--  memo-form -->
+        <div id="memo-list"></div>
       </div><!-- .col-sm-6 -->
   </div>
 </div>
@@ -54,9 +54,9 @@
 <p>&copy; 2016 mamorum</p>
 </footer>
 
-<script id="tsubuyaki-tmpl" type="x-tmpl-mustache">
+<script id="memo-tmpl" type="x-tmpl-mustache">
 {{#memo}}
-<div class="tsubuyaki" data-id="{{id}}">
+<div class="memo" data-id="{{id}}">
   <div class="txt"><p>{{txt}}</p></div>
   <div class="action pull-right">
   <span class="date">{{updated}}</span>
@@ -98,6 +98,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
-<script src="js/tsubuyaki.js"></script>
+<script src="js/memo.js"></script>
 </body>
 </html>

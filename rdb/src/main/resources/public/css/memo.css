@@ -2,7 +2,7 @@
 
 body {
 	background-color: #A5D6A7;
-	font-family: "メイリオ", "ヒラギノ角ゴ Pro W3", sans-serif;
+	font-family: "meiryo", "ヒラギノ角ゴ Pro W3", sans-serif;
 	font-size: 16px;
 }
 header {
@@ -48,34 +48,34 @@ footer {
 	margin-bottom: 5px;
 	text-align:center;
 }
-#tsubuyaki-form {
+#memo-form {
 	background-color:#A5D6A7;
 	border: solid 1px #5cb85c;
 	border-radius: 10px;
 	padding: 20px 20px 15px 20px;
 }
-.tsubuyaki {
+.memo {
 	margin-top: 10px;
 	background-color:#ffffff;
 	border: solid 1px #5cb85c;
 	border-radius: 10px 10px 10px 10px;
 	padding: 15px 20px 10px 20px;
 }
-.tsubuyaki:hover,
-.tsubuyaki:hover .action .btn {
+.memo:hover,
+.memo:hover .action .btn {
 	background-color: #f5fbf6;
 }
-.tsubuyaki .txt p {
+.memo .txt p {
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	margin: 0 0 5px;
 }
-.tsubuyaki .action .date {
+.memo .action .date {
 	color: #7e7e7e;
 	font-size: 14px;
 	margin-right: 10px;
 }
-.tsubuyaki .action .btn {
+.memo .action .btn {
 	color: #7e7e7e;
 	font-size: 16px;
 	margin-left: 5px;
@@ -83,7 +83,7 @@ footer {
 	padding: 6px 5px 2px 6px;
 	border: none;
 }
-.tsubuyaki .action .btn:hover {
+.memo .action .btn:hover {
 	background-color: #5cb85c;
 	color: #ffffff;
 }
