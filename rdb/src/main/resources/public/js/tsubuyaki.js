@@ -28,7 +28,7 @@ $(function() {
 
 		// read.
 		$.ajax({
-			url: '/tsubuyaki',
+			url: '/memo',
 			method: 'get',
 			cache: false
 		}).then(function(data, status, jqxhr) {
@@ -47,7 +47,7 @@ $(function() {
 		if (txt === '') return;
 
 		$.ajax({
-			url: '/tsubuyaki',
+			url: '/memo',
 			data: JSON.stringify({'txt':txt}),
 			contentType: 'application/json',
 			method: 'post',
@@ -70,16 +70,17 @@ $(function() {
 	$('#modal-update').click(function() {
 
 		var txt = $('#new-txt').val();
-		var url = '/tsubuyaki/' + $tsubuyaki.data('id');
+		var url = '/memo/' + $tsubuyaki.data('id');
 
 		$.ajax({
 			url: url,
-			data: {'txt':txt},
+			data: JSON.stringify({'txt':txt}),
+			contentType: 'application/json',
 			method: 'put',
 			cache: false
 		}).then(function(data, status, jqxhr) {
 			$('#modal').modal('hide');
-			$tsubuyaki.find('.txt p').html(txt);
+			$tsubuyaki.find('.txt p').html(data.memo.txt);
 		});
 	});
 
@@ -89,7 +90,7 @@ $(function() {
 		if (!confirm("Are you sure you want to delete?")) return;
 
 		var $tsubuyaki = $(this).closest('.tsubuyaki');
-		var url = '/tsubuyaki/' + $tsubuyaki.data('id');
+		var url = '/memo/' + $tsubuyaki.data('id');
 
 		$.ajax({
 			url: url,
