@@ -4,7 +4,10 @@ $(function() {
 	function render(data) {
 		var tmpl = $('#memo-tmpl').html();
 		Mustache.parse(tmpl);
-		var rendered = Mustache.render(tmpl, data);
+		return Mustache.render(tmpl, data);
+	}
+	function renderToList(data) {
+		var rendered = render(data);
 		$('#memo-list').prepend(rendered);
 	}
 	function format(msecString) {
@@ -32,7 +35,7 @@ $(function() {
 			method: 'get',
 			cache: false
 		}).then(function(data, status, jqxhr) {
-			render(data);
+			renderToList(data);
 			$('.date').each(function(index, e) {
 				$(e).html(format($(e).html()));
 			})
@@ -53,7 +56,7 @@ $(function() {
 			method: 'post',
 			cache: false
 		}).then(function(data, status, jqxhr) {
-			render(data);
+			renderToList(data);
 			var $date = $('.memo:first').find('.date');
 			$date.html(format($date.html()));
 			$('#txt').val('').focus();
@@ -79,8 +82,10 @@ $(function() {
 			method: 'put',
 			cache: false
 		}).then(function(data, status, jqxhr) {
+			$memo.html($(render(data)).html());
+			var $date = $memo.find('.date');
+			$date.html(format($date.html()));
 			$('#modal').modal('hide');
-			$memo.find('.txt p').html(data.memo.txt);
 		});
 	});
 

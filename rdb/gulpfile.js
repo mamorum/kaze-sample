@@ -1,42 +1,30 @@
 var
-  gulp = require('gulp'),
+  p,  // process
   child = require('child_process'),
+  gulp = require('gulp'),
   gutil = require('gulp-util'),
-  lr = require('gulp-livereload'),
-  wait = require('gulp-wait2');
+  livereload = require('gulp-livereload');
 
-var p;
 
-gulp.task('stop', function() {
+// Linux にも対応する
+gulp.task('stop-app', function() {
   child.exec('taskkill /pid ' + p.pid + ' /f /t');
 });
 
-gulp.task('start', function() {
+gulp.task('start-app', function() {
   p = child.spawn(
     'C:\\gradle-2.10\\bin\\gradle.bat',
     ['run'], ['']
   );
   p.stdout.on('data', function(b) { process.stdout.write(b.toString()); });
   p.stderr.on('data', function(b) { process.stderr.write(b.toString()); });
-  gutil.log("PID:" + p.pid);
+  gutil.log("App PID:" + p.pid);
 });
 
-gulp.task('default', ['start'], function() {
-  lr.listen();
-  gulp.watch('src/**/*', ['stop', 'start']);
+gulp.task('start-livereload', function() {
+  livereload.listen();  // port=35729
 });
 
-
-// for livereload -->
-
-// gulp.task('reload', function() {
-//   setTimeout(function() {lr.reload('*');}, 10000);
-// });
-
-// gulp.task('default', ['start'], function() {
-//   lr.listen();
-//   gulp.watch('src/**/*', ['stop', 'start', 'reload']);
-// });
-
-// and livereload.js is needed in html.
-// <script src="http://localhost:35729/livereload.js"></script>
+gulp.task('default', ['start-app', 'start-livereload'], function() {
+  gulp.watch('src/**/*', ['stop-app', 'start-app']);
+});
