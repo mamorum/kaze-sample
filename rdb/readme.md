@@ -10,7 +10,7 @@ A Posted memo is stored in relational database.
 
 
 ## Dependencies
-This app uses following products to access a dabase.
+This app uses following products to access a database.
 
 - [HikariCP](https://github.com/brettwooldridge/HikariCP)
 - [sql2o](https://github.com/aaberg/sql2o)
