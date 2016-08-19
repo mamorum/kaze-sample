@@ -31,10 +31,17 @@ fatJar {
 
 repositories.mavenCentral()
 dependencies {
-    compile 'com.github.mamorum:kaze:0.0.1'
+    // Gradle cannot use snapshot ? Now swiching gradle to maven.
+    compile 'com.github.mamorum:kaze:0.0.3-SNAPSHOT'
     compile 'ch.qos.logback:logback-classic:1.1.7'
     compile 'org.postgresql:postgresql:9.4.1209'
     compile 'com.zaxxer:HikariCP:2.4.7'
     compile 'org.sql2o:sql2o:1.5.4'
     compile 'org.flywaydb:flyway-core:4.0.3'
+}
+
+// -> gradle run -Dkey=val
+// To pass property '-Dkey=val' to app.
+tasks.withType(JavaExec) {
+  systemProperties System.properties
 }
