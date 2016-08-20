@@ -60,12 +60,6 @@
         <version>1.5.0</version>
         <configuration>
           <mainClass>kaze.sample.rdb.Main</mainClass>
-          <systemProperties>
-            <property>
-              <key>bs-url</key>
-              <value>http://localhost:3000/__browser_sync__?method=reload</value>
-            </property>
-          </systemProperties>
         </configuration>
       </plugin>
     </plugins>
