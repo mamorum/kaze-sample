@@ -62,7 +62,7 @@ $(function() {
 			$("#form-msg").css('color', '#888');
 			$('#txt').val('').focus();
 		}).fail(function(data, status, jqxhr) {
-			if (data.status ===400) {
+			if (data.status === 400) {
 				if (data.responseJSON.cause === "validate") {
 					$("#form-msg").fadeOut(500, function(){
 						$("#form-msg").css('color', 'red');
