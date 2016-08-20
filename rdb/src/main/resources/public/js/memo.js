@@ -55,11 +55,21 @@ $(function() {
 			contentType: 'application/json',
 			method: 'post',
 			cache: false
-		}).then(function(data, status, jqxhr) {
+		}).done(function(data, status, jqxhr) {
 			renderToList(data);
 			var $date = $('.memo:first').find('.date');
 			$date.html(format($date.html()));
+			$("#form-msg").css('color', '#888');
 			$('#txt').val('').focus();
+		}).fail(function(data, status, jqxhr) {
+			if (data.status ===400) {
+				if (data.responseJSON.cause === "validate") {
+					$("#form-msg").fadeOut(500, function(){
+						$("#form-msg").css('color', 'red');
+						$(this).fadeIn(500)
+					});
+				}
+			}
 		});
 	});
 

@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 body {
-	background-color: #A5D6A7;
 	font-family: "meiryo", "ヒラギノ角ゴ Pro W3", sans-serif;
 	font-size: 16px;
 }
@@ -12,15 +11,8 @@ section {
 	min-height:650px;
 	padding-top:50px;
 	padding-bottom:50px;
-	background-color:#E8F5E9;
+	background-color:#fafdfa;
 }
-footer {
-	font-size:14px;
-	color:#ffffff;
-	text-align:center;
-	padding:15px 0px 30px 0px;
-}
-
 
 /* for overwiting bootstrap.*/
 .navbar {
@@ -49,15 +41,23 @@ footer {
 	text-align:center;
 }
 #memo-form {
-	background-color:#A5D6A7;
-	border: solid 1px #5cb85c;
+	background-color:#E8F5E9;
+	border: solid 2px #A5D6A7;
 	border-radius: 10px;
 	padding: 20px 20px 15px 20px;
 }
+
+#form-msg {
+    padding-left:5px;
+    font-weight:bold;
+    font-size:14px;
+    color:#888;
+}
+
 .memo {
 	margin-top: 10px;
 	background-color:#ffffff;
-	border: solid 1px #5cb85c;
+	border: solid 2px #A5D6A7;
 	border-radius: 10px 10px 10px 10px;
 	padding: 15px 20px 10px 20px;
 }
@@ -76,7 +76,7 @@ footer {
 	margin-right: 10px;
 }
 .memo .action .btn {
-	color: #7e7e7e;
+	color: #5cb85c;
 	font-size: 16px;
 	margin-left: 5px;
 	margin-right: 5px;
