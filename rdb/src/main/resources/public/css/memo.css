@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 body {
-	font-family: "meiryo", "ヒラギノ角ゴ Pro W3", sans-serif;
+	font-family: "meiryo", "Hiragino Kaku Gothic Pro W3", sans-serif;
 	font-size: 16px;
+	background-color:#d6efd6;
 }
 header {
 	background-color: #ffffff;
@@ -11,7 +12,6 @@ section {
 	min-height:650px;
 	padding-top:50px;
 	padding-bottom:50px;
-	background-color:#d6efd6;
 }
 
 /* for overwiting bootstrap.*/
@@ -47,7 +47,8 @@ section {
 	padding: 20px 20px 15px 20px;
 }
 
-#form-msg {
+#form-msg,
+#modal-msg {
     padding-left:5px;
     font-weight:bold;
     font-size:14px;

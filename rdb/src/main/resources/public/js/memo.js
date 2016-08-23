@@ -22,6 +22,14 @@ $(function() {
 					('0' + (d.getMonth()+1)).slice(-2) + '.' +
 					('0' + d.getDate()).slice(-2);
 	}
+	function notify(res, $msg) {
+		if (res.status === 400) {
+			if (res.responseJSON.cause === "validate") {
+				alert('Plese enter 200 characters or less.');
+				$msg.css('color', 'red');
+			}
+		}
+	}
 
 
 	// onload.
@@ -62,14 +70,7 @@ $(function() {
 			$("#form-msg").css('color', '#888');
 			$('#txt').val('').focus();
 		}).fail(function(data, status, jqxhr) {
-			if (data.status === 400) {
-				if (data.responseJSON.cause === "validate") {
-					$("#form-msg").fadeOut(500, function(){
-						$("#form-msg").css('color', 'red');
-						$(this).fadeIn(500)
-					});
-				}
-			}
+			notify(data, $("#form-msg"));
 		});
 	});
 
@@ -78,6 +79,7 @@ $(function() {
 	$('body').on('click', '.edit', function() {
 		$memo = $(this).closest('.memo');
 		$('#new-txt').val($memo.find('.txt p').html());
+		$("#modal-msg").css('color', '#888');
 		$('#modal').modal();
 	});
 	$('#modal-update').click(function() {
@@ -96,6 +98,8 @@ $(function() {
 			var $date = $memo.find('.date');
 			$date.html(format($date.html()));
 			$('#modal').modal('hide');
+		}).fail(function(data, status, jqxhr) {
+			notify(data, $("#modal-msg"));
 		});
 	});
 
