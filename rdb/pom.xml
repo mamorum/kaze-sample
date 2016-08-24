@@ -6,10 +6,6 @@
   <version>0.0.1</version>
   <packaging>jar</packaging>
 
-  <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
   <dependencies>
       <dependency>
           <groupId>com.github.mamorum</groupId>
@@ -42,6 +38,10 @@
           <version>4.0.3</version>
       </dependency>
   </dependencies>
+
+  <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
   <build>    
     <plugins>
