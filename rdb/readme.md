@@ -15,7 +15,7 @@ This app uses following products to access a database.
 - [HikariCP](https://github.com/brettwooldridge/HikariCP)
 - [sql2o](https://github.com/aaberg/sql2o)
 
-And depends on [Flyway](https://github.com/flyway/flyway) for database migration. Other dependencies are written in [build.gradle](build.gradle) .
+And depends on [Flyway](https://github.com/flyway/flyway) for database migration. Other dependencies are written in [pom.xml](pom.xml) .
 
 
 ## Database Information
@@ -23,7 +23,7 @@ This app is configured to access PostgreSQL. All configuration such as database 
 
 
 ## Requirements
-JDK 8+, PostgreSQL, Gradle, are needed.
+JDK 8+, PostgreSQL, Maven, are needed.
 
 
 ## Starting App
@@ -33,7 +33,8 @@ After starting database, please execute commands bellow.
 > git clone https://github.com/mamorum/kaze-sample.git
 > cd kaze-sample
 > cd rdb
-> gradle run
+> mvn compile
+> mvn exec:java
 ```
 
 Then, `http://localhost:8080/` returns a page.
