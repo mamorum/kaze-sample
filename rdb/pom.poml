@@ -1,0 +1,26 @@
+pkg=com.github.mamorum:kaze-sample-rdb:0.0.1:jar
+depends=
+  com.github.mamorum:kaze:0.1.1-SNAPSHOT,
+  ch.qos.logback:logback-classic:1.1.7,
+  org.postgresql:postgresql:9.4.1209,
+  com.zaxxer:HikariCP:2.4.7,
+  org.sql2o:sql2o:1.5.4,
+  org.flywaydb:flyway-core:4.0.3
+property=
+  project.build.sourceEncoding:UTF-8
+compiler=source:1.8, target:1.8
+fatjar=mainClass:kaze.sample.rdb.Main
+exec=mainClass:kaze.sample.rdb.Main
+---
+{{#model4 }}
+  {{pkg}}
+  {{depends}}
+  {{property}}
+  <build>
+    <plugins>
+      {{compiler}}
+      {{fatjar}}
+      {{exec}}
+    </plugins>
+  </build>
+{{/model4}}
