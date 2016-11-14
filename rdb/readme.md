@@ -1,40 +1,51 @@
 # Kaze Sample RDB
+This is a sample application using Kaze framework. 
 
-## Overview
-This is a sample application using Kaze framework. This app has a user interface, in which user can post a simple memo. 
+In this app, we can post a simple memo stored in the RDBMS.
 
-![Image of the user interface](app-screen-shot.png)
-
-
-A Posted memo is stored in relational database.
+![App screen](app-screen.png)
 
 
-## Dependencies
-This app uses following products to access a database.
-
+## DB Access
+### Products
 - [HikariCP](https://github.com/brettwooldridge/HikariCP)
 - [sql2o](https://github.com/aaberg/sql2o)
-
-And depends on [Flyway](https://github.com/flyway/flyway) for database migration. Other dependencies are written in [pom.xml](pom.xml) .
-
-
-## Database Information
-This app is configured to access PostgreSQL. All configuration such as database name, user name, password, etc is in [hikari.properties](src/main/resources/db/hikari.properties).
+- [Flyway](https://github.com/flyway/flyway)
 
 
-## Requirements
-JDK 8+, PostgreSQL, Maven, are needed.
+### Configs
+Written in the [hikari.properties](src/main/resources/db/hikari.properties).
+
+
+## Build System
+- Maven
+- [POML](https://github.com/mamorum/poml)
+
+POML generates `pom.xml` from `pom.poml`.
 
 
 ## Starting App
-After starting database, please execute commands bellow.
+### Requirements
+- JDK 8+
+- PostgreSQL
+- Maven
 
+
+### Step1. Start DB
+Start PostgreSQL.
+
+### Step2. Clone App
 ```
 > git clone https://github.com/mamorum/kaze-sample.git
+```
+
+### Step3. Run App
+```
 > cd kaze-sample
 > cd rdb
 > mvn compile
 > mvn exec:java
 ```
 
-Then, `http://localhost:8080/` returns a page.
+### Step4. Checking
+Open `http://localhost:8080/`.
