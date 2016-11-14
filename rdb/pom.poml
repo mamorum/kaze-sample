@@ -11,16 +11,3 @@ property=
 compiler=source:1.8, target:1.8
 fatjar=mainClass:kaze.sample.rdb.Main
 exec=mainClass:kaze.sample.rdb.Main
----
-{{#model4 }}
-  {{pkg}}
-  {{depends}}
-  {{property}}
-  <build>
-    <plugins>
-      {{compiler}}
-      {{fatjar}}
-      {{exec}}
-    </plugins>
-  </build>
-{{/model4}}
