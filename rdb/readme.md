@@ -1,5 +1,5 @@
 # Kaze Sample RDB
-This is a sample application using Kaze framework. 
+This is a sample application using [Kaze](https://github.com/mamorum/kaze) framework. 
 
 In this app, we can post a simple memo stored in the RDBMS.
 
