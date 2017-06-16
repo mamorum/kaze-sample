@@ -1,0 +1,8 @@
+pkg=com.github.mamorum:feed-paper:1.0.0:jar
+depend=
+  com.github.mamorum:kaze:0.2.0,
+  ch.qos.logback:logback-classic:1.1.7,
+  com.google.http-client:google-http-client:1.20.0
+properties=&encoding>UTF-8, &compiler>1.8
+plugin=&fatjar
+&fatjar=mainClass>fp.Main
