@@ -11,7 +11,7 @@ $(function() {
 		$('#memo-list').prepend(rendered);
 	}
 	function format(msecString) {
-		var d = new Date(Number(msecString));
+		var d = new Date(msecString);
 		if (d.toLocaleDateString() === (new Date()).toLocaleDateString()) {
 			// today. return 'hh:mm'.
 			return ('0' + d.getHours()).slice(-2) + ':' +
@@ -59,8 +59,7 @@ $(function() {
 
 		$.ajax({
 			url: '/memo',
-			data: JSON.stringify({'txt':txt}),
-			contentType: 'application/json',
+			data: {'txt':txt},
 			method: 'post',
 			cache: false
 		}).done(function(data, status, jqxhr) {
@@ -85,11 +84,11 @@ $(function() {
 	$('#modal-update').click(function() {
 
 		var txt = $('#new-txt').val();
-		var url = '/memo/' + $memo.data('id');
+		var id = $memo.data('id');
 
 		$.ajax({
-			url: url,
-			data: JSON.stringify({'txt':txt}),
+			url: '/memo',
+			data: JSON.stringify({'id':id, 'txt':txt}),
 			contentType: 'application/json',
 			method: 'put',
 			cache: false

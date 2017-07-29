@@ -1,9 +1,13 @@
-pkg=com.github.mamorum:kaze-sample-rdb:0.2.0:jar
-depends=
-  com.github.mamorum:kaze:0.2.1-SNAPSHOT,
-  org.postgresql:postgresql:9.4.1209,
-  com.zaxxer:HikariCP:2.4.7,
+pkg=com.github.mamorum:kaze-sample-rdb:0.2.2:jar
+depend=
+  com.github.mamorum:kaze:0.2.2-SNAPSHOT,
+  org.slf4j:slf4j-simple:1.7.25,
+  org.eclipse.jetty:jetty-server:9.4.6.v20170531,
+  com.google.code.gson:gson:2.8.1,
+  org.postgresql:postgresql:9.4.1212,
+  com.zaxxer:HikariCP:2.6.2,
   org.sql2o:sql2o:1.5.4,
-  org.flywaydb:flyway-core:4.0.3
-property=$encoding: UTF-8, $compiler: 1.8
-fatjar=mainClass:kaze.sample.rdb.Main
+  org.flywaydb:flyway-core:4.2.0
+properties=&encoding>UTF-8, &compiler>1.8
+plugin=&fatjar
+&fatjar=mainClass>kaze.sample.rdb.Main

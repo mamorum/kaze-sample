@@ -9,9 +9,8 @@ import kaze.sample.rdb.Rdb;
 import kaze.sample.rdb.model.Memo;
 
 public class MemoRepository {
-  
-  static Sql2o sql = Rdb.sql; 
-  
+  static Sql2o sql = Rdb.sql;
+
   public List<Memo> readAll() {
     try (Connection c = sql.open()) {
       return c.createQuery(
@@ -19,7 +18,6 @@ public class MemoRepository {
       ).executeAndFetch(Memo.class);
     }
   }
-  
   public Memo create(String txt) {
     try (Connection c = sql.open()) {
       return c.createQuery(
@@ -27,7 +25,6 @@ public class MemoRepository {
       ).addParameter("txt", txt).executeAndFetchFirst(Memo.class);
     }
   }
-
   public Memo update(Long id, String txt) {
     try (Connection c = sql.open()) {
       return c.createQuery(
@@ -35,7 +32,6 @@ public class MemoRepository {
       ).addParameter("id", id).addParameter("txt", txt).executeAndFetchFirst(Memo.class);
     }
   }
-
   public void delete(Long id) {
     try (Connection c = sql.open()) {
       c.createQuery(
