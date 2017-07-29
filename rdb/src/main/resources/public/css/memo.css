@@ -1,93 +1,75 @@
 @charset "UTF-8";
 
 body {
-	font-family: "meiryo", "Hiragino Kaku Gothic Pro W3", sans-serif;
-	font-size: 16px;
-	background-color:#d6efd6;
+  font-family: "meiryo", "Hiragino Kaku Gothic Pro W3", sans-serif;
+  font-size: 16px;
+  background-color:#efefef;
 }
 header {
-	background-color: #ffffff;
+  background-color:#000;
 }
 section {
-	min-height:650px;
-	padding-top:50px;
-	padding-bottom:50px;
+  min-height:650px;
+  padding-top:15px;
+  padding-bottom:50px;
 }
 
 /* for overwiting bootstrap.*/
 .navbar {
-	margin-bottom: 0px;
-	border-radius: 0px;
-	border-bottom: 2px solid #A5D6A7;
+  margin-bottom: 0px;
+  border-radius: 0px;
 }
 .navbar-header {
-	min-width: 100%;
+  min-width: 100%;
 }
-.form-control, .btn {
-	font-size: 16px;
+.form-control {
+  font-size: 16px;
 }
 .form-horizontal .form-group {
-	margin-left: 0px;
-	margin-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .form-horizontal .form-group:last-child {
-	margin-bottom: 0px;
+  margin-bottom: 0px;
+}
+.btn {
+  font-size: 16px;
+  border-radius: 0px;
 }
 
-/* for app. */
+/* app */
 #brand {
-	margin-top:5px;
-	margin-bottom: 5px;
-	text-align:center;
-}
-#memo-form {
-	background-color:#E8F5E9;
-	border: solid 2px #A5D6A7;
-	border-radius: 10px;
-	padding: 20px 20px 15px 20px;
+  margin-top:5px;
+  margin-bottom: 5px;
+  text-align:center;
 }
 
-#form-msg,
-#modal-msg {
-    padding-left:5px;
-    font-weight:bold;
-    font-size:14px;
-    color:#888;
+/* form */
+#memo-form {
+  background-color:#dcdcdc;
+  padding: 20px 20px 15px 20px;
+}
+#memo-form #create-btn,
+#modal #modal-update {
+  background-color:#666;
+  color:#fff;
 }
 
 .memo {
-	margin-top: 10px;
-	background-color:#ffffff;
-	border: solid 2px #A5D6A7;
-	border-radius: 10px 10px 10px 10px;
-	padding: 15px 20px 10px 20px;
-}
-.memo:hover,
-.memo:hover .action .btn {
-	background-color: #f5fbf6;
+  margin-top: 10px;
+  background-color:#fff;
+  padding: 15px 20px 10px 20px;
 }
 .memo .txt p {
-	white-space: pre-wrap;
-	word-wrap: break-word;
-	margin: 0 0 5px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0 0 5px;
 }
 .memo .action .date {
-	color: #7e7e7e;
-	font-size: 14px;
-	margin-right: 10px;
+  font-size: 14px;
 }
 .memo .action .btn {
-	color: #5cb85c;
-	font-size: 16px;
-	margin-left: 5px;
-	margin-right: 5px;
-	padding: 6px 5px 2px 6px;
-	border: none;
-}
-.memo .action .btn:hover {
-	background-color: #5cb85c;
-	color: #ffffff;
-}
-#modal-label {
-	color: #5cb85c;
+  margin-left: 5px;
+  background-color:#666;
+  color:#fff;
 }

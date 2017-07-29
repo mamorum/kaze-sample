@@ -8,7 +8,7 @@ This is a [Kaze](https://github.com/mamorum/kaze) sample application accessing P
 
 ## Build System
 - [Maven](https://maven.apache.org/)
-- [POML](https://github.com/mamorum/poml)
+- [Poml](https://github.com/mamorum/poml)
 
 
 ## Starting App
