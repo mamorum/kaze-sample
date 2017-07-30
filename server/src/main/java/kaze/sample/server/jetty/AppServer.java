@@ -1,4 +1,4 @@
-package kaze.sample.server;
+package kaze.sample.server.jetty;
 
 import com.google.gson.Gson;
 
