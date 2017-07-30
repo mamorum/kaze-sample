@@ -1,6 +1,6 @@
 pkg=com.github.mamorum:kaze-sample-server:0.2.2:jar
 depend=
-  com.github.mamorum:kaze:0.2.2-SNAPSHOT,
+  com.github.mamorum:kaze:0.2.2,
   org.eclipse.jetty:jetty-server:9.4.6.v20170531,
   com.google.code.gson:gson:2.8.1
 properties=&encoding>UTF-8, &compiler>1.8
