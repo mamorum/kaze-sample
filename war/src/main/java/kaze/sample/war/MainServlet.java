@@ -12,19 +12,19 @@ import com.google.gson.Gson;
 
 import kaze.App;
 
-@WebServlet("/*")
+@WebServlet("/app/*")
 @SuppressWarnings("serial")
 public class MainServlet extends HttpServlet {
   public void init() throws ServletException {
     Gson gson = new Gson();
     App.parser(gson::fromJson, gson::toJson);
-    App.get("/kaze-sample/app/hello", (req, res) -> {
+    App.get("/app/hello", (req, res) -> {
       res.html("<p>Hello</p>");
     });
-    App.get("/kaze-sample/app/json/hello", (req, res) -> {
+    App.get("/app/json", (req, res) -> {
       res.json("msg", "Hello");
     });
-    App.get("/kaze-sample/app/execption", (req, res) -> {
+    App.get("/app/err", (req, res) -> {
       throw new Exception();
     });
   }
