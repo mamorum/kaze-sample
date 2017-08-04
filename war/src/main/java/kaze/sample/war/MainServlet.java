@@ -32,12 +32,12 @@ public class MainServlet extends HttpServlet {
     HttpServletRequest req, HttpServletResponse res)
   throws ServletException, IOException
   {
-      try {
-        boolean run = App.run(req, res);
-        if (!run) res.sendError(404);
-      } catch (Exception e) {
-        res.sendError(500);
-        throw new ServletException(e);
-      }
+    try {
+      boolean run = App.run(req, res);
+      if (!run) res.sendError(404);
+    } catch (Exception e) {
+      res.sendError(500);
+      throw new ServletException(e);
     }
+  }
 }
