@@ -1,6 +1,6 @@
 pkg=com.github.mamorum:kaze-sample-war:0.2.3:war
 depend=
-  javax.servlet:javax.servlet-api:3.1.0:provided,
+  org.apache.tomcat.embed:tomcat-embed-core:8.5.16:provided,
   com.github.mamorum:kaze:0.2.3-SNAPSHOT,
   com.google.code.gson:gson:2.8.1
 properties=&encoding>UTF-8, &compiler>1.8
@@ -8,5 +8,4 @@ builds=finalName>kaze-sample
 plugin=$war, $jetty
 # use war plugin 3.1.0 for no web.xml
 $war=:maven-war-plugin:3.1.0
-# run jetty plugin -> mvn jetty:run
 $jetty=org.eclipse.jetty:jetty-maven-plugin:9.4.6.v20170531
