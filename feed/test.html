@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Test: Get Feed</title>
+</head>
+<style type="text/css">
+* {
+  font-size: 16px;
+  font-family: 'meiryo', sans-serif;
+}
+#url {
+  width:500px;
+}  
+#feed {
+  width:700px;
+  height:400px;
+}
+</style>
+<body>
+<p>
+  <input type="text" id="url" value="https://news.yahoo.co.jp/pickup/rss.xml">
+  <input type="button" id="get" value="Get">
+</p>
+<textarea id="feed">
+</textarea>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(function () {
+  $('#get').click(function() {
+    $('#feed').val('');
+    var param = $('#url').val();
+    if (param === '') return;
+    $.ajax({
+      url: 'http://localhost:8080/feed?url=' + param
+    }).done(function(data, status, jqxhr) {
+      $('#feed').val(
+        (new XMLSerializer()).serializeToString(data.documentElement)
+      );
+    }).fail(function(data, status, jqxhr) {
+      alert(status + ': ' + jqxhr);
+    });
+  });
+});
+</script>
+</body>
+</html>
