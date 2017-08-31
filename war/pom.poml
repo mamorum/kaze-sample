@@ -4,7 +4,7 @@ depend=
   com.github.mamorum:kaze:0.2.3-SNAPSHOT,
   com.google.code.gson:gson:2.8.1
 properties=&encoding>UTF-8, &compiler>1.8
-builds=finalName>kaze-sample
+build.base=finalName>kaze-sample
 plugin=$war, $jetty
 # use war plugin 3.1.0 for no web.xml
 $war=:maven-war-plugin:3.1.0
