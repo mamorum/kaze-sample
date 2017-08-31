@@ -5,4 +5,3 @@ depend=
   com.google.http-client:google-http-client:1.20.0
 properties=&encoding>UTF-8, &compiler>1.8
 plugin=&fatjar
-&fatjar=mainClass>fp.Main

@@ -1,1 +1,1 @@
-web: java -jar -Dport=$PORT target/kaze-sample-feed.jar
+web: java -cp target/kaze-sample-feed.jar -Dport=$PORT kaze.sample.feed.Main
