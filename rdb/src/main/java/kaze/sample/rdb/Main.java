@@ -12,7 +12,8 @@ public class Main {
     Gson gson = new Gson();
     App.parser(gson::fromJson, gson::toJson);
     MemoApi.register();
-    Jetty.location("/public");
-    Jetty.listen(8080);
+    Jetty jty = new Jetty();
+    jty.location("/public");
+    jty.listen(8080);
   }
 }
