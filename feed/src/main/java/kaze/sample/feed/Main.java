@@ -20,8 +20,7 @@ public class Main {
     if (pp != null) port = Integer.parseInt(pp);
     //<- for heroku.
     App.get("/feed", Main::feed);
-    Jetty jty = new Jetty();
-    jty.listen(port);
+    Jetty.listen(port);
   }
 
   //-> feed

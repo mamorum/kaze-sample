@@ -8,7 +8,6 @@ public class Main {
     App.get("/", (req, res) -> {
       res.html("<p>Hello World</p>");
     });
-    Jetty jetty = new Jetty();
-    jetty.listen(8080);
+    Jetty.listen(8080);
   }
 }
