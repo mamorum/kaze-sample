@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.mamorum</groupId>
-  <artifactId>kaze-sample-feed</artifactId>
+  <artifactId>kaze-sample-hw</artifactId>
   <version>0.2.3</version>
   <packaging>jar</packaging>
 
@@ -17,11 +17,6 @@
       <artifactId>jetty-servlet</artifactId>
       <version>9.4.6.v20170531</version>
     </dependency>
-    <dependency>
-      <groupId>com.google.http-client</groupId>
-      <artifactId>google-http-client</artifactId>
-      <version>1.20.0</version>
-    </dependency>
   </dependencies>
 
   <properties>
@@ -30,29 +25,4 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <finalName>${project.artifactId}</finalName>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-          <appendAssemblyId>false</appendAssemblyId>
-          <attach>false</attach>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals><goal>single</goal></goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 </project>
