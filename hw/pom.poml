@@ -1,5 +1,5 @@
 pkg=com.github.mamorum:kaze-sample-hw:0.2.3:jar
 depend=
-  com.github.mamorum:kaze:0.2.3-SNAPSHOT,
+  com.github.mamorum:kaze:0.2.3,
   org.eclipse.jetty:jetty-servlet:9.4.6.v20170531
 properties=&encoding>UTF-8, &compiler>1.8

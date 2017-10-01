@@ -1,7 +1,7 @@
 pkg=com.github.mamorum:kaze-sample-war:0.2.3:war
 depend=
   org.apache.tomcat.embed:tomcat-embed-core:8.5.16:provided,
-  com.github.mamorum:kaze:0.2.3-SNAPSHOT,
+  com.github.mamorum:kaze:0.2.3,
   com.google.code.gson:gson:2.8.1
 properties=&encoding>UTF-8, &compiler>1.8
 build.base=finalName>kaze-sample

@@ -1,6 +1,6 @@
 pkg=com.github.mamorum:kaze-sample-rdb:0.2.2:jar
 depend=
-  com.github.mamorum:kaze:0.2.3-SNAPSHOT,
+  com.github.mamorum:kaze:0.2.3,
   org.slf4j:slf4j-simple:1.7.25,
   org.eclipse.jetty:jetty-servlet:9.4.6.v20170531,
   com.google.code.gson:gson:2.8.1,
