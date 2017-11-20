@@ -9,7 +9,7 @@ import kaze.App;
 
 @WebServlet("/app/*")
 @SuppressWarnings("serial")
-public class AppServlet extends App.Servlet {
+public class AppServlet extends kaze.App.AppServlet {
   public void init() throws ServletException {
     Gson gson = new Gson();
     App.parser(gson::fromJson, gson::toJson);
