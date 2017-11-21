@@ -6,7 +6,7 @@ import org.apache.catalina.Context;
 import org.apache.catalina.servlets.DefaultServlet;
 import org.apache.catalina.startup.Tomcat;
 
-import kaze.sample.war.AppServlet;
+import kaze.sample.war.SyncAppServlet;
 
 // run embedded tomcat
 public class Main {
@@ -20,7 +20,7 @@ public class Main {
     Tomcat.addServlet(ctx, "default", new DefaultServlet());
     ctx.addServletMappingDecoded("/", "default");
     ctx.addWelcomeFile("index.html");
-    Tomcat.addServlet(ctx, "app", new AppServlet());
+    Tomcat.addServlet(ctx, "app", new SyncAppServlet());
     ctx.addServletMappingDecoded("/app/*", "app");
     cat.start();
     cat.getServer().await();

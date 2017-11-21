@@ -5,24 +5,24 @@ import javax.servlet.annotation.WebServlet;
 
 import com.google.gson.Gson;
 
-import kaze.App;
+import kaze.App.AppServlet;
 
 @WebServlet("/app/*")
 @SuppressWarnings("serial")
-public class AppServlet extends kaze.App.AppServlet {
+public class SyncAppServlet extends AppServlet {
   public void init() throws ServletException {
     Gson gson = new Gson();
-    App.parser(gson::fromJson, gson::toJson);
-    App.get("/app", (req, res) -> {
+    app.parser(gson::fromJson, gson::toJson);
+    app.get("/", (req, res) -> {
       res.write("text/plain", "Hello World");
     });
-    App.get("/app/html/hello", (req, res) -> {
+    app.get("/html/hello", (req, res) -> {
       res.html("<p>Hello</p>");
     });
-    App.get("/app/json", (req, res) -> {
+    app.get("/json", (req, res) -> {
       res.json("msg", "Hello");
     });
-    App.get("/app/err", (req, res) -> {
+    app.get("/err", (req, res) -> {
       throw new Exception();
     });
   }

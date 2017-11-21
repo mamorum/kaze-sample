@@ -1,16 +1,17 @@
 ## Create War
 ```
-mvn package
+> mvn package
 ```
 
 
 ## Run Embedded Tomcat
 ```
-mvn exec:java -Dexec.mainClass=kaze.sample.tomcat.Main -Dexec.classpathScope=compile
+> mvn exec:java -Dexec.mainClass=kaze.sample.tomcat.Main -Dexec.classpathScope=compile
 ```
 
 
 # Run Jetty Plugin
 ```
-mvn jetty:run
+> mvn compile
+> mvn jetty:run
 ```
