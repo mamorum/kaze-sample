@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Index</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<p id="msg">Loading...</p>
+<script type="text/javascript">
+(function() {
+  fetch('/app/hello'
+    ).then(res => res.json()
+    ).then(json => {
+      var msg = document.getElementById('msg');
+      msg.textContent = json.msg;
+    });
+})();
+</script>
+</body>
+</html>
