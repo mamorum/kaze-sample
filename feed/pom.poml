@@ -1,7 +1,0 @@
-pkg=com.github.mamorum:kaze-sample-feed:0.2.3:jar
-depend=
-  com.github.mamorum:kaze:0.2.3,
-  org.eclipse.jetty:jetty-servlet:9.4.6.v20170531,
-  com.google.http-client:google-http-client:1.20.0
-properties=&encoding>UTF-8, &compiler>1.8
-plugin=&fatjar
