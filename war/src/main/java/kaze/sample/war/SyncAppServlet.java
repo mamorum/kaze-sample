@@ -5,7 +5,7 @@ import javax.servlet.annotation.WebServlet;
 
 import com.google.gson.Gson;
 
-import kaze.App.AppServlet;
+import kaze.AppServlet;
 
 @WebServlet("/app/*")
 @SuppressWarnings("serial")

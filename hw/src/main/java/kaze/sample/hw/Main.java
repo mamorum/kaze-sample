@@ -13,8 +13,9 @@ public class Main {
     });
     Gson gson = new Gson();
     app.parser(gson::fromJson, gson::toJson);
-    Jetty.app(app, "/app/*");
-    Jetty.doc("/public", "/");
-    Jetty.listen(8080);
+    Jetty jetty = new Jetty();
+    jetty.app(app, "/app/*");
+    jetty.doc("/public", "/");
+    jetty.listen(8080);
   }
 }
