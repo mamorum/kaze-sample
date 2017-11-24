@@ -5,11 +5,11 @@ import javax.servlet.annotation.WebServlet;
 
 import com.google.gson.Gson;
 
-import kaze.AppServlet;
+import kaze.App;
 
 @WebServlet("/app/*")
 @SuppressWarnings("serial")
-public class SyncAppServlet extends AppServlet {
+public class SyncAppServlet extends App.Servlet {
   public void init() throws ServletException {
     Gson gson = new Gson();
     app.parser(gson::fromJson, gson::toJson);
