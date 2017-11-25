@@ -3,27 +3,18 @@ package kaze.sample.war;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
-import com.google.gson.Gson;
-
 import kaze.App;
 
 @WebServlet("/app/*")
 @SuppressWarnings("serial")
 public class SyncAppServlet extends App.Servlet {
   public void init() throws ServletException {
-    Gson gson = new Gson();
-    app.parser(gson::fromJson, gson::toJson);
-    app.get("/", (req, res) -> {
-      res.write("text/plain", "Hello World");
-    });
-    app.get("/html/hello", (req, res) -> {
-      res.html("<p>Hello</p>");
-    });
-    app.get("/json", (req, res) -> {
-      res.json("msg", "Hello");
+    app = new App();
+    app.get("/hello", (req, res) -> {
+      res.write("text/plain", "Hello.");
     });
     app.get("/err", (req, res) -> {
-      throw new Exception();
+      throw new Exception("from Servlet.");
     });
   }
 }

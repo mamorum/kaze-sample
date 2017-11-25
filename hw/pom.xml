@@ -10,12 +10,17 @@
     <dependency>
       <groupId>com.github.mamorum</groupId>
       <artifactId>kaze</artifactId>
-      <version>0.2.4-SNAPSHOT</version>
+      <version>0.2.4</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-servlet</artifactId>
       <version>9.4.6.v20170531</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-core</artifactId>
+      <version>8.5.16</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
