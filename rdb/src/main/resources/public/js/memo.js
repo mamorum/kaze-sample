@@ -34,7 +34,7 @@ $(function() {
   (function() {
     $('#txt').focus();
     $.ajax({  // read
-      url: '/memo', method: 'get', cache: false
+      url: '/app/memo', method: 'get', cache: false
     }).then(function(data, status, jqxhr) {
       renderToList(data);
       $('.date').each(function(index, e) {
@@ -47,7 +47,7 @@ $(function() {
     var txt = $('#txt').val();
     if (txt === '') return;
     $.ajax({
-      url: '/memo', data: {'txt':txt},
+      url: '/app/memo', data: {'txt':txt},
       method: 'post', cache: false
     }).done(function(data, status, jqxhr) {
       renderToList(data);
@@ -70,7 +70,7 @@ $(function() {
     var txt = $('#new-txt').val();
     var id = $memo.data('id');
     $.ajax({
-      url: '/memo', method: 'put', cache: false,
+      url: '/app/memo', method: 'put', cache: false,
       data: JSON.stringify({'id':id, 'txt':txt}),
       contentType: 'application/json'
     }).then(function(data, status, jqxhr) {
@@ -87,7 +87,7 @@ $(function() {
   $('body').on('click', '.delete', function() {
     if (!confirm("Are you sure you want to delete?")) return;
     var $memo = $(this).closest('.memo');
-    var url = '/memo/' + $memo.data('id');
+    var url = '/app/memo/' + $memo.data('id');
     $.ajax({
       url: url, method: 'delete', cache: false
     }).then(function(data, status, jqxhr) {

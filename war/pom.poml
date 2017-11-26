@@ -1,8 +1,7 @@
-pkg=com.github.mamorum:kaze-sample-war:0.2.3:war
+pkg=com.github.mamorum:kaze-sample-war:0.2.4:war
 depend=
-  org.apache.tomcat.embed:tomcat-embed-core:8.5.16:provided,
-  com.github.mamorum:kaze:0.2.3,
-  com.google.code.gson:gson:2.8.1
+  javax.servlet:javax.servlet-api:3.1.0:provided,
+  com.github.mamorum:kaze:0.2.4
 properties=&encoding>UTF-8, &compiler>1.8
 build.base=finalName>kaze-sample
 plugin=$war, $jetty
