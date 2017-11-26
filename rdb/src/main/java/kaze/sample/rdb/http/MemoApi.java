@@ -8,11 +8,11 @@ import kaze.sample.rdb.sql.MemoRepository;
 
 public class MemoApi {
   private static final MemoRepository repo = new MemoRepository();
-  public static void register() {
-    App.get("/memo", MemoApi::read);
-    App.post("/memo", MemoApi::create);
-    App.put("/memo", MemoApi::update);
-    App.delete("/memo/:id", MemoApi::delete);
+  public static void register(App app) {
+    app.get("/memo", MemoApi::read);
+    app.post("/memo", MemoApi::create);
+    app.put("/memo", MemoApi::update);
+    app.delete("/memo/:id", MemoApi::delete);
   }
   public static void read(Req req, Res res) {
     res.json("memo", repo.readAll());
