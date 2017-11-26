@@ -8,7 +8,10 @@ import org.apache.catalina.startup.Tomcat;
 
 import kaze.App;
 
-public class TomcatMain {
+// To check:
+//  app -> http://localhost:8080/app/hello
+//  doc -> http://localhost:8080/ (or /index.html)
+public class TomcatApp {
   public static void main(String[] args) throws Exception {
     App app = new App();
     app.get("/hello", (req, res) -> {

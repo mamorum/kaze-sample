@@ -3,5 +3,6 @@ depend=
   com.github.mamorum:kaze:0.2.4,
   org.eclipse.jetty:jetty-servlet:9.4.6.v20170531,
   org.apache.tomcat.embed:tomcat-embed-core:8.5.16,
-  com.google.code.gson:gson:2.8.2
+  com.google.code.gson:gson:2.8.2,
+  com.fasterxml.jackson.core:jackson-databind:2.9.2
 properties=&encoding>UTF-8, &compiler>1.8
