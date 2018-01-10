@@ -37,5 +37,5 @@ Start PostgreSQL.
 > mvn exec:java -Dexec.mainClass=kaze.sample.rdb.Main
 ```
 
-### Step5. Check app
+### Step5. Check App
 Open `http://localhost:8080/`.

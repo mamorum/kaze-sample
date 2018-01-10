@@ -1,7 +1,7 @@
-pkg=com.github.mamorum:kaze-sample-war:0.2.4:war
+pkg=com.github.mamorum:kaze-sample-war:0.2.5:war
 depend=
-  javax.servlet:javax.servlet-api:3.1.0:provided,
-  com.github.mamorum:kaze:0.2.4
+  com.github.mamorum:kaze:0.2.5,
+  javax.servlet:javax.servlet-api:3.1.0:provided
 properties=&encoding>UTF-8, &compiler>1.8
 build.base=finalName>kaze-sample
 plugin=$war, $jetty
