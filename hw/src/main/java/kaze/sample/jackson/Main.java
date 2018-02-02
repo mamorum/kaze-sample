@@ -1,4 +1,4 @@
-package kaze.sample.json;
+package kaze.sample.jackson;
 
 import java.io.IOException;
 
@@ -8,14 +8,14 @@ import kaze.App;
 import kaze.server.Jetty;
 
 // To check:
-//  app -> http://localhost:8080/hello
-public class JacksonApp {
+//  app -> http://localhost:8080/
+public class Main {
   public static final ObjectMapper jackson = new ObjectMapper();
   public static void main(String[] args) {
     App app = new App();
-    app.parser(JacksonApp::toObj, JacksonApp::toJson);
-    app.get("/hello", (req, res) -> {
-      res.json("msg", "Hello Jackson.");
+    app.json.parser(Main::toObj, Main::toJson);
+    app.get.add("/", (req, res) -> {
+      res.json("msg", "Hello, Jackson.");
     });
     Jetty.app(app, "/*");
     Jetty.listen(8080);

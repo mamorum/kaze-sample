@@ -11,7 +11,6 @@ public class Rdb {
   public static HikariDataSource ds;
   public static Sql2o sql;
   public static Flyway fly;
-
   static void init() {
     HikariConfig c = new HikariConfig("/db/hikari.properties");
     ds = new HikariDataSource(c);
