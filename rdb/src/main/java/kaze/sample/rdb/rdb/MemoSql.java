@@ -1,4 +1,4 @@
-package kaze.sample.rdb.sql;
+package kaze.sample.rdb.rdb;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.sql2o.Connection;
 import kaze.sample.rdb.Rdb;
 import kaze.sample.rdb.model.Memo;
 
-public class MemoRepository {
+public class MemoSql {
   public List<Memo> readAll() {
     try (Connection c = Rdb.sql.open()) {
       return c.createQuery(

@@ -4,15 +4,15 @@ import kaze.App;
 import kaze.Req;
 import kaze.Res;
 import kaze.sample.rdb.model.Memo;
-import kaze.sample.rdb.sql.MemoRepository;
+import kaze.sample.rdb.rdb.MemoSql;
 
 public class MemoApi {
-  private static final MemoRepository repo = new MemoRepository();
+  private static final MemoSql repo = new MemoSql();
   public static void register(App app) {
-    app.get.add("/memo", MemoApi::read);
-    app.post.add("/memo", MemoApi::create);
-    app.put.add("/memo", MemoApi::update);
-    app.delete.add("/memo/:id", MemoApi::delete);
+    app.get("/memo", MemoApi::read);
+    app.post("/memo", MemoApi::create);
+    app.put("/memo", MemoApi::update);
+    app.delete("/memo/:id", MemoApi::delete);
   }
   public static void read(Req req, Res res) {
     res.json("memo", repo.readAll());

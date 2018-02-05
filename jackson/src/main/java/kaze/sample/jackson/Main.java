@@ -13,21 +13,21 @@ public class Main {
   public static final ObjectMapper jackson = new ObjectMapper();
   public static void main(String[] args) {
     App app = new App();
-    app.json.parser(Main::toObj, Main::toJson);
-    app.get.add("/", (req, res) -> {
+    app.conv(Main::jsonToObj, Main::objToJson);
+    app.get("/", (req, res) -> {
       res.json("msg", "Hello, Jackson.");
     });
     Jetty.app(app, "/*");
     Jetty.listen(8080);
   }
-  private static <T> T toObj(String json, Class<T> to) {
+  private static <T> T jsonToObj(String json, Class<T> to) {
     try { return jackson.readValue(json, to);}
     catch (IOException e) {
       throw new RuntimeException(e);
     }
   }
-  private static String toJson(Object from) {
-    try { return jackson.writeValueAsString(from);}
+  private static String objToJson(Object obj) {
+    try { return jackson.writeValueAsString(obj);}
     catch (IOException e) {
       throw new RuntimeException(e);
     }

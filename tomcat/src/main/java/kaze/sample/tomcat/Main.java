@@ -14,7 +14,7 @@ import kaze.App;
 public class Main {
   public static void main(String[] args) throws Exception {
     App app = new App();
-    app.get.add("/hello", (req, res) -> {
+    app.get("/hello", (req, res) -> {
       res.html("<p>Hello, Tomcat.</p>");
     });
     listen(app);

@@ -9,7 +9,7 @@ import kaze.App;
 @SuppressWarnings("serial")
 public class SyncAppServlet extends App {
   public void init() throws ServletException {
-    get.add("/hello", (req, res) -> {
+    get("/hello", (req, res) -> {
       res.write("text/plain", "Hello.");
     });
   }

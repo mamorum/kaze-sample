@@ -11,7 +11,7 @@ public class Main {
     Rdb.init();
     App app = new App();
     Gson gson = new Gson();
-    app.json.parser(gson::fromJson, gson::toJson);
+    app.conv(gson::fromJson, gson::toJson);
     MemoApi.register(app);
     Jetty.app(app, "/app/*");
     Jetty.doc("/public", "/");
