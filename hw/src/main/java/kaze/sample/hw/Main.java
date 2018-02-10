@@ -1,4 +1,4 @@
-package kaze.sample;
+package kaze.sample.hw;
 
 import com.google.gson.Gson;
 
