@@ -1,4 +1,10 @@
-*.class
+# maven, eclipse
+**/target/
+**/.settings/
+**/.classpath
+**/.project
+
+**/*.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -61,3 +67,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/bin/
