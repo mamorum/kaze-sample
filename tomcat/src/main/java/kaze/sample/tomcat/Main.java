@@ -1,4 +1,4 @@
-package kaze.sample.html;
+package kaze.sample.tomcat;
 
 import java.io.File;
 
@@ -11,11 +11,11 @@ import kaze.App;
 // To check:
 //  app -> http://localhost:8080/app/hello
 //  doc -> http://localhost:8080/ (or /index.html)
-public class TomcatApp {
+public class Main {
   public static void main(String[] args) throws Exception {
     App app = new App();
     app.get("/hello", (req, res) -> {
-      res.html("<p>Hello World from Tomcat.</p>");
+      res.html("<p>Hello, Tomcat.</p>");
     });
     listen(app);
   }
@@ -29,7 +29,7 @@ public class TomcatApp {
     Tomcat.addServlet(ctx, "default", new DefaultServlet());
     ctx.addServletMappingDecoded("/", "default");
     ctx.addWelcomeFile("index.html");
-    Tomcat.addServlet(ctx, "app", app.servlet());
+    Tomcat.addServlet(ctx, "app", app);
     ctx.addServletMappingDecoded("/app/*", "app");
     cat.start();
     cat.getServer().await();

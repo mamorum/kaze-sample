@@ -7,14 +7,10 @@ import kaze.App;
 
 @WebServlet("/app/*")
 @SuppressWarnings("serial")
-public class SyncAppServlet extends App.Servlet {
+public class SyncAppServlet extends App {
   public void init() throws ServletException {
-    app = new App();
-    app.get("/hello", (req, res) -> {
+    get("/hello", (req, res) -> {
       res.write("text/plain", "Hello.");
-    });
-    app.get("/err", (req, res) -> {
-      throw new Exception("from Servlet.");
     });
   }
 }

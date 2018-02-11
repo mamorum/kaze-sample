@@ -4,10 +4,10 @@ import kaze.App;
 import kaze.Req;
 import kaze.Res;
 import kaze.sample.rdb.model.Memo;
-import kaze.sample.rdb.sql.MemoRepository;
+import kaze.sample.rdb.rdb.MemoSql;
 
 public class MemoApi {
-  private static final MemoRepository repo = new MemoRepository();
+  private static final MemoSql repo = new MemoSql();
   public static void register(App app) {
     app.get("/memo", MemoApi::read);
     app.post("/memo", MemoApi::create);
