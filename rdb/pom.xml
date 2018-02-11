@@ -3,7 +3,7 @@
 
   <groupId>com.github.mamorum</groupId>
   <artifactId>kaze-sample-rdb</artifactId>
-  <version>0.2.5</version>
+  <version>0.2.6</version>
   <packaging>jar</packaging>
 
   <dependencies>
@@ -11,11 +11,6 @@
       <groupId>com.github.mamorum</groupId>
       <artifactId>kaze</artifactId>
       <version>0.2.6</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>1.7.25</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
@@ -46,6 +41,11 @@
       <groupId>org.flywaydb</groupId>
       <artifactId>flyway-core</artifactId>
       <version>4.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.25</version>
     </dependency>
   </dependencies>
 

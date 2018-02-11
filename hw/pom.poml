@@ -1,4 +1,4 @@
-pkg=com.github.mamorum:kaze-sample-hw:0.2.5:jar
+pkg=com.github.mamorum:kaze-sample-hw:0.2.6:jar
 depend=
   com.github.mamorum:kaze:0.2.6,
   org.eclipse.jetty:jetty-servlet:9.4.6.v20170531,
