@@ -5,11 +5,6 @@ cd
 call poml
 cd ..
 
-cd jackson
-cd
-call poml
-cd ..
-
 cd rdb
 cd
 call poml

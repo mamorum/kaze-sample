@@ -6,16 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<p id="msg">Loading...</p>
-<script type="text/javascript">
-(function() {
-  fetch('/app/hello'
-    ).then(res => res.json()
-    ).then(json => {
-      var msg = document.getElementById('msg');
-      msg.textContent = json.msg;
-    });
-})();
-</script>
+<p>Index html.</p>
 </body>
 </html>

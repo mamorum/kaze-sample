@@ -1,6 +1,4 @@
-package kaze.sample.hw;
-
-import com.google.gson.Gson;
+package kaze.sample;
 
 import kaze.App;
 import kaze.server.Jetty;
@@ -11,10 +9,8 @@ import kaze.server.Jetty;
 public class Main {
   public static void main(String[] args) {
     App app = new App();
-    Gson gson = new Gson();
-    app.conv(gson::fromJson, gson::toJson);
     app.get("/hello", (req, res) -> {
-      res.json("msg", "Hello, World.");
+      res.html("<p>Hello, World.</p>");
     });
     Jetty.app(app, "/app/*");
     Jetty.doc("/public", "/");
