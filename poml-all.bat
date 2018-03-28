@@ -1,6 +1,6 @@
 call poml -v
 
-cd hw
+cd gs
 cd
 call poml
 cd ..

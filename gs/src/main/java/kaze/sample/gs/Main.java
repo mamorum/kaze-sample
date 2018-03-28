@@ -1,4 +1,4 @@
-package kaze.sample;
+package kaze.sample.gs;
 
 import kaze.App;
 import kaze.server.Jetty;

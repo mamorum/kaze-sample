@@ -1,4 +1,4 @@
-package kaze.sample.json;
+package kaze.sample.gs.json;
 
 import java.io.IOException;
 
