@@ -10,11 +10,6 @@ cd
 call poml
 cd ..
 
-cd tomcat
-cd
-call poml
-cd ..
-
 cd war
 cd
 call poml
