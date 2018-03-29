@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Index</title>
+<title>Json Message</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -9,7 +9,7 @@
 <p id="msg">Loading...</p>
 <script type="text/javascript">
 (function() {
-  fetch('/json/gson/msg'
+  fetch('/app/msg'
     ).then(res => res.json()
     ).then(json => {
       var msg = document.getElementById('msg');
