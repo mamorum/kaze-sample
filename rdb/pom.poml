@@ -1,6 +1,6 @@
-pkg=com.github.mamorum:kaze-sample-rdb:0.2.7:jar
+pkg=com.github.mamorum:kaze-sample-rdb:1.0.0:jar
 depend=
-  com.github.mamorum:kaze:0.2.7,
+  com.github.mamorum:kaze:1.0.0,
   org.eclipse.jetty:jetty-servlet:9.4.6.v20170531,
   com.google.code.gson:gson:2.8.1,
   org.postgresql:postgresql:9.4.1212,
