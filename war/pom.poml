@@ -1,9 +1,14 @@
-pkg=com.github.mamorum:kaze-sample-war:0.2.7:war
+pkg=com.github.mamorum:kaze-sample-war:0.3.0:war
 depend=
-  com.github.mamorum:kaze:0.2.7,
+  com.github.mamorum:kaze:0.3.0,
   javax.servlet:javax.servlet-api:3.1.0:provided
 properties=&encoding>UTF-8, &compiler>1.8
 build.base=finalName>kaze-sample
-# war plugin 3.1.0 needs no web.xml
-plugin=$war
-$war=:maven-war-plugin:3.1.0
+# jetty plugin -> mvn jetty:run
+plugin=$jetty
+$jetty=org.eclipse.jetty:jetty-maven-plugin:9.4.6.v20170531
+$jetty.conf={
+  <webApp>
+    <contextPath>/kaze-sample</contextPath>
+  </webApp>
+}
