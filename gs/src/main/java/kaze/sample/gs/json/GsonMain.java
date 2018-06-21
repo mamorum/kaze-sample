@@ -3,7 +3,7 @@ package kaze.sample.gs.json;
 import com.google.gson.Gson;
 
 import kaze.App;
-import kaze.server.Jetty;
+import kaze.opt.Jetty;
 
 // app -> http://localhost:8080/app/msg
 // doc -> http://localhost:8080/*

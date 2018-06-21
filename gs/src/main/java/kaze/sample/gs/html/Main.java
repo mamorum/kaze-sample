@@ -1,7 +1,7 @@
 package kaze.sample.gs.html;
 
 import kaze.App;
-import kaze.server.Jetty;
+import kaze.opt.Jetty;
 
 // app -> http://localhost:8080/app/html/hello
 // doc -> http://localhost:8080/*
