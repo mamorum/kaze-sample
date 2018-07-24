@@ -13,7 +13,7 @@ public class GsonMain {
     App app = new App();
     app.conv(gson::fromJson, gson::toJson);
     app.get("/msg", (req, res) -> {
-      res.json("msg", "Hello World.");
+      res.json("msg", "Gson App.");
     });
     Jetty.app(app, "/app/*");
     Jetty.doc("/public", "/");
