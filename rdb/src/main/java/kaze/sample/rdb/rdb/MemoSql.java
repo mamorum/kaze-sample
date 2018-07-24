@@ -15,18 +15,27 @@ public class MemoSql {
       ).executeAndFetch(Memo.class);
     }
   }
-  public Memo create(String txt) {
+  private Memo read(Long id) {
     try (Connection c = Rdb.sql.open()) {
       return c.createQuery(
-          "insert into memo ( txt ) values ( :txt ) returning id, txt, updated, created"
-      ).addParameter("txt", txt).executeAndFetchFirst(Memo.class);
+          "select id, txt, updated, created from memo where id = :id"
+      ).addParameter("id", id).executeAndFetchFirst(Memo.class);
+    }
+  }
+  public Memo create(String txt) {
+    try (Connection c = Rdb.sql.open()) {
+      long id = c.createQuery(
+          "insert into memo ( txt ) values ( :txt )"
+      ).addParameter("txt", txt).executeUpdate().getKey(Long.class);
+      return read(id);
     }
   }
   public Memo update(Long id, String txt) {
     try (Connection c = Rdb.sql.open()) {
-      return c.createQuery(
-          "update memo set txt = :txt, updated = current_timestamp where id = :id returning id, txt, updated, created"
-      ).addParameter("id", id).addParameter("txt", txt).executeAndFetchFirst(Memo.class);
+      c.createQuery(
+          "update memo set txt = :txt, updated = current_timestamp where id = :id"
+      ).addParameter("id", id).addParameter("txt", txt).executeUpdate();
+      return read(id);
     }
   }
   public void delete(Long id) {

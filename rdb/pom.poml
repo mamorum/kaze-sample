@@ -1,9 +1,9 @@
-pkg=com.github.mamorum:kaze-sample-rdb:0.3.0:jar
+pkg=com.github.mamorum:kaze-sample-rdb:1.0.0:jar
 depend=
-  com.github.mamorum:kaze:0.3.0,
+  com.github.mamorum:kaze:1.0.0,
   org.eclipse.jetty:jetty-servlet:9.4.6.v20170531,
   com.google.code.gson:gson:2.8.1,
-  org.postgresql:postgresql:9.4.1212,
+  com.h2database:h2:1.4.197,
   com.zaxxer:HikariCP:2.6.2,
   org.sql2o:sql2o:1.5.4,
   org.flywaydb:flyway-core:4.2.0,

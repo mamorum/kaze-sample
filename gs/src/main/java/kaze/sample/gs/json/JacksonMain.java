@@ -5,7 +5,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import kaze.App;
-import kaze.server.Jetty;
+import kaze.opt.Jetty;
 
 // app -> http://localhost:8080/app/msg
 // doc -> http://localhost:8080/*

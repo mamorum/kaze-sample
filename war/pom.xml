@@ -3,14 +3,14 @@
 
   <groupId>com.github.mamorum</groupId>
   <artifactId>kaze-sample-war</artifactId>
-  <version>0.3.0</version>
+  <version>1.0.0</version>
   <packaging>war</packaging>
 
   <dependencies>
     <dependency>
       <groupId>com.github.mamorum</groupId>
       <artifactId>kaze</artifactId>
-      <version>0.3.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
